@@ -2,37 +2,53 @@ body {
     font-family: Montserrat, sans-serif;
     font-size: 13px;
     line-height: 18px;
+    margin: 0;
+    min-height: 100vh;
+
+    background-image: url("images/bg_1 (1).png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-img {
+.container {
+    max-width: 1110px;
+    margin: 0 auto;
+    background-image: url("./images/bg_1.png");
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: 790px auto;
+}
+
+.img {
     display: block;
     margin-bottom: 30px;
+    width: 290px;
 }
 
 .product-item {
-    background-color: #923636;
+    background-color: #f7f7fa;
     padding: 25px;
-    margin-bottom: 30px;
     width: 340px;
     box-sizing: border-box;
-    margin-left: 85px;
 }
 
 .title {
-    font-size: 80px;
-    font-weight: 400;
-    line-height: 78px;
-    margin: 0;
-    text-align: center;
     color: #515076;
+    font-size: 70px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 110px;
+    padding-top: 220px;
+    text-align: center;
 }
 
-.products-list {
-    list-style-type: none;
+.product-list {
+    list-style: none;
     padding: 0;
     margin: 0;
-}
-
-.main-text {
-    color: lch(85.52% 27.52 86.68);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
 }
