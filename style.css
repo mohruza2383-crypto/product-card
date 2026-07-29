@@ -111,3 +111,19 @@ body {
     color: #515076;
     font-weight: 700;
 }
+#change-color-btn {
+    display: block;
+    margin: 30px auto;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #8A6FB6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#change-color-btn:hover {
+    background-color: #6f57a0;
+}
