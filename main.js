@@ -1,24 +1,24 @@
 alert("JS работает!");
 
-const button = document.getElementById("change-color-btn");
+const changeColorBtn = document.getElementById("change-color-btn");
+const googleBtn = document.getElementById("google-btn");
 const cards = document.querySelectorAll(".product-card");
 const title = document.querySelector(".catalog__title");
 
 let isLavender = false;
 
-
 title.addEventListener("mouseenter", function () {
-    console.log(title.textContent);
+    console.log(title.textContent);
 });
 
-button.addEventListener("click", function () {
-    cards.forEach(function (card) {
-        if (isLavender) {
-            card.style.backgroundColor = "#f7f7fa";
-        } else {
-            card.style.backgroundColor = "#E6E6FA";
-        }
-    });
+changeColorBtn.addEventListener("click", function () {
+    const newColor = isLavender ? "#f7f7fa" : "#E6E6FA";
+    cards.forEach(card => card.style.backgroundColor = newColor);
+    isLavender = !isLavender;
+    
+    this.textContent = isLavender ? "Вернуть исходный цвет" : "Изменить цвет карточек";
+});
 
-    isLavender = !isLavender;
+googleBtn.addEventListener("click", function () {
+    window.open("https://www.google.com", "_blank");
 });
