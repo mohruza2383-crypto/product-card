@@ -46,8 +46,6 @@ registrationForm.addEventListener('submit', function (event) {
     if (!registrationForm.checkValidity()) {
         registrationForm.reportValidity();
 
-        alert('Регистрация отклонена. Проверьте правильность заполнения формы.');
-        return;
     }
 
     if (passwordInput.value !== repeatPasswordInput.value) {
@@ -62,7 +60,6 @@ registrationForm.addEventListener('submit', function (event) {
         lastName: formData.get('lastName'),
         birthDate: formData.get('birthDate'),
         login: formData.get('login'),
-        password: formData.get('password'),
         repeatPassword: formData.get('repeatPassword'),
         createdOn: new Date()
     };
