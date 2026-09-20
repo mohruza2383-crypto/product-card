@@ -139,8 +139,102 @@
 
         <button id="change-color-btn">Изменить цвет карточек</button>
         <button id="google-btn">Открыть Google</button>
+        <button id="registration-btn">Регистрация</button>
     </div>
 
+    <div class="modal">
+
+    <div class="overlay"></div>
+
+    <div class="modal__content">
+
+        <button class="modal__close" type="button">×</button>
+
+        <h2>Регистрация</h2>
+
+        <form id="registration-form">
+
+            <label for="first-name">Имя</label>
+            <input
+                type="text"
+                id="first-name"
+                name="firstName"
+                placeholder="Введите имя"
+                required
+            >
+
+            <label for="last-name">Фамилия</label>
+            <input
+                type="text"
+                id="last-name"
+                name="lastName"
+                placeholder="Введите фамилию"
+                required
+            >
+
+            <label for="birth-date">Дата рождения</label>
+            <input
+                type="date"
+                id="birth-date"
+                name="birthDate"
+                required
+            >
+
+            <label for="login">Логин</label>
+            <input
+                type="text"
+                id="login"
+                name="login"
+                placeholder="Введите логин"
+                minlength="3"
+                required
+            >
+
+            <label for="password">Пароль</label>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Введите пароль"
+                minlength="6"
+                required
+            >
+
+            <label for="repeat-password">Повторите пароль</label>
+            <input
+                type="password"
+                id="repeat-password"
+                name="repeatPassword"
+                placeholder="Повторите пароль"
+                minlength="6"
+                required
+            >
+
+            <button type="submit">Зарегистрироваться</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+    <footer class="footer">
+    <form class="footer__form" id="subscribe-form">
+        <label for="email">Email</label>
+
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Введите ваш email"
+            required
+        >
+
+        <button type="submit">Подписаться</button>
+    </form>
+</footer>
+
+    <script src="homework-11.js"></script>
     <script type="module" src="homework-10.js"></script>
     <script type="module" src="homework-9.js"></script>
     <script src="homework-8.js"></script>
