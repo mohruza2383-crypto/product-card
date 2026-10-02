@@ -14,7 +14,7 @@
 
 <body>
 
-    <div class="catalog">
+    < class="catalog">
 
         <h1 class="catalog__title">Выбери свой продукт</h1>
 
@@ -22,6 +22,15 @@
 
             <li class="product-card">
                 <img class="product-card__image" src="images/photo_1.png" alt="Товар увлажняющий мусс" width="290">
+
+                <div class="product-card__stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
 
                 <span class="product-card__type">для нормальной кожи</span>
 
@@ -46,6 +55,15 @@
             <li class="product-card">
                 <img class="product-card__image" src="images/photo_2.png.png" alt="Товар увлажняющая маска" width="290">
 
+                <div class="product-card__stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+
                 <span class="product-card__type">для нормальной кожи</span>
 
                 <h2 class="product-card__title">Увлажняющая маска</h2>
@@ -69,6 +87,13 @@
             <li class="product-card">
                 <img class="product-card__image" src="images/photo_3.png" alt="Гель для умывания" width="290">
 
+                <div class="product-card__stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+</div>
                 <span class="product-card__type">для нормальной кожи</span>
 
                 <h2 class="product-card__title">Гель для умывания</h2>
@@ -92,9 +117,16 @@
             <li class="product-card">
                 <img class="product-card__image" src="images/photo_4.png" alt="Подарочный набор №1" width="290">
 
-                <span class="product-card__type">для нормальной кожи</span>
+                <div class="product-card__stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
 
-                <h2 class="product-card__title">Подарочный набор №1</h2>
+                <h2 class="product-card__title">Подарочный набор   №1</h2>
 
                 <p class="product-card__text">Набор, состоящий из увлажняющего крема и маски.</p>
 
@@ -115,9 +147,17 @@
             <li class="product-card">
                 <img class="product-card__image" src="images/photo_5.png" alt="Подарочный набор №5" width="290">
 
-                <span class="product-card__type">для нормальной кожи</span>
+                <div class="product-card__stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
 
-                <h2 class="product-card__title">Подарочный набор №5</h2>
+                <h2 class="product-card__title">Подарочный набор   №5</h2>
 
                 <p class="product-card__text">Весь набор средств Invisible Symphony: крем, маска, мусс и гель для умывания.</p>
 
@@ -137,10 +177,12 @@
 
         </ul>
 
-        <button id="change-color-btn">Изменить цвет карточек</button>
-        <button id="google-btn">Открыть Google</button>
-        <button id="registration-btn">Регистрация</button>
-    </div>
+            <div class="catalog__buttons">
+                <button id="change-color-btn">Изменить цвет карточек</button>
+                <button id="google-btn">Открыть Google</button>
+                <button id="registration-btn">Регистрация</button>
+            </div>
+                
 
     <div class="modal" id="registration-modal">
 
@@ -219,19 +261,60 @@
 </div>
 
     <footer class="footer">
-    <form class="footer__form" id="subscribe-form">
-        <label for="email">Email</label>
 
-        <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Введите ваш email"
-            required
-        >
+    <div class="footer__subscribe">
 
-        <button type="submit">Подписаться</button>
-    </form>
+        <h2 class="footer__title">Будь с нами</h2>
+
+        <p class="footer__text">
+            Подпишись на новости и узнавай о новинках первым
+        </p>
+
+        <form class="footer__form" id="subscribe-form">
+
+            <label for="email">Email</label>
+
+            <div class="footer__email-row">
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Введите ваш email"
+                    required
+                >
+
+                <button type="submit">Подписаться</button>
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <div class="footer__contacts">
+
+        <div class="footer__socials">
+
+            <a href="#" class="footer__social">
+                Telegram
+            </a>
+
+            <a href="#" class="footer__social">
+                YouTube
+            </a>
+
+            <a href="#" class="footer__social">
+                Instagram
+            </a>
+
+        </div>
+
+        <a href="tel:+79091929105" class="footer__phone">
+            +7 909 192 91 05
+        </a>
+
+    </div>
+
 </footer>
 
     <script src="homework-11.js"></script>
