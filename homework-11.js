@@ -17,6 +17,11 @@ subscribeForm.addEventListener('submit', function (event) {
 
 
 const registrationButton = document.querySelector('#registration-btn');
+
+registrationBtn.addEventListener("click", () => {
+    modal.open();
+});
+
 const modal = document.querySelector('.modal');
 const closeButton = document.querySelector('.modal__close');
 const overlay = document.querySelector('.overlay');
