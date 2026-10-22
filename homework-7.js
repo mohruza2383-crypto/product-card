@@ -1,10 +1,10 @@
-
-function weatherReport(city, temperature){
+function weatherReport(city, temperature) {
     console.log(`Сейчас в ${city} температура — ${temperature} градусов по Цельсию`);
 }
 
 weatherReport("Москва", 25);
 weatherReport("Лондон", 18);
+
 
 const SPEED_OF_LIGHT = 299792458;
 
@@ -22,6 +22,7 @@ checkSpeed(150000000);
 checkSpeed(299792458);
 checkSpeed(500000000);
 
+
 const productName = "Ноутбук";
 const productPrice = 1500;
 
@@ -37,20 +38,24 @@ function purchaseProduct(budget) {
 purchaseProduct(2000);
 purchaseProduct(1200);
 
+
 function calculateDiscount(price, discountPercent) {
-    const discountAmount = (price * discountPercent) / 100;
+    const discountAmount = price * discountPercent / 100;
     const finalPrice = price - discountAmount;
+
     console.log(`Цена товара: ${price}$`);
     console.log(`Скидка: ${discountPercent}%`);
     console.log(`Цена со скидкой: ${finalPrice}$`);
+
     return finalPrice;
 }
 
 calculateDiscount(100, 20);
 
+
 const userName = "Алексей";
-let userAge = 25;
-let isUserActive = true;
+const userAge = 25;
+const isUserActive = true;
 
 console.log("=== Информация о пользователе ===");
 console.log(`Имя: ${userName}`);

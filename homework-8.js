@@ -1,4 +1,3 @@
-
 const user = {
     name: "Малика",
     email: "malika@gmail.com",
@@ -23,11 +22,11 @@ const car = {
     transmission: "Механика"
 };
 
+
 car.owner = user;
 
-
 function addMaxSpeed(car) {
-    if (!car.maxSpeed) {
+    if (car.maxSpeed === undefined) {
         car.maxSpeed = 190;
     }
 }
@@ -128,10 +127,10 @@ console.log("№9 — Все книги:", allBooks);
 
 
 function checkRareBooks(books) {
-    return books.map(book => {
-        book.isRare = book.year > 2000;
-        return book;
-    });
+    return books.map(book => ({
+        ...book,
+        isRare: book.year > 2000
+    }));
 }
 
 const updatedBooks = checkRareBooks(allBooks);

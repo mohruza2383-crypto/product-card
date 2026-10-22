@@ -1,12 +1,18 @@
-
 export default class Form {
     constructor(id) {
         this.form = document.getElementById(id);
+
+        if (!this.form) {
+            throw new Error(`Форма с id "${id}" не найдена`);
+        }
+
+        this.addSubmitListener();
     }
 
     getValues() {
-        const formData = new FormData(this.form);
-        return Object.fromEntries(formData.entries());
+        return Object.fromEntries(
+            new FormData(this.form).entries()
+        );
     }
 
     isValid() {
@@ -15,5 +21,30 @@ export default class Form {
 
     reset() {
         this.form.reset();
+    }
+
+    addSubmitListener() {
+        this.form.addEventListener("submit", event => {
+            event.preventDefault();
+
+            if (!this.isValid()) {
+                this.form.reportValidity();
+                return;
+            }
+
+            const password = this.form.querySelector("#password");
+            const repeatPassword = this.form.querySelector("#repeat-password");
+
+            if (password && repeatPassword &&
+                password.value !== repeatPassword.value) {
+                alert("Пароли не совпадают!");
+                return;
+            }
+
+            console.log("Данные формы:", this.getValues());
+
+            alert("Форма заполнена успешно!");
+            this.reset();
+        });
     }
 }

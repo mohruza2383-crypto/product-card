@@ -1,16 +1,25 @@
-const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const numberFromFive = number.filter(num => num >= 5);
+const numbersFromFive = numbers.filter(num => num >= 5);
 
-console.log(numberFromFive);
+console.log("Числа от 5 и больше:", numbersFromFive);
 
 
-const movis = ["Аватар", "Титаник", "Интерстеллар", "Джокер", "Форсаж", "Мстители"];
+const movies = [
+    "Аватар",
+    "Титаник",
+    "Интерстеллар",
+    "Джокер",
+    "Форсаж",
+    "Мстители"
+];
 
-console.log(movis.includes("Джокер"));
+console.log("Есть ли фильм «Джокер»:", movies.includes("Джокер"));
+
+
 function reverseArray(array) {
-    return array.reverse();
+    return [...array].reverse();
 }
 
-console.log(reverseArray(numberFromFive));
-console.log(reverseArray(movis));
+console.log("Перевёрнутый массив чисел:", reverseArray(numbersFromFive));
+console.log("Перевёрнутый массив фильмов:", reverseArray(movies));

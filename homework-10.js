@@ -1,3 +1,4 @@
+import { products } from "./product-data.js";
 import { products } from './product-data.js';
 
 function createProductCard(product) {
@@ -63,3 +64,4 @@ function initApp() {
 }
 
 document.addEventListener('DOMContentLoaded', initApp);
+
