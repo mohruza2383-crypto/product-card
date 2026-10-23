@@ -1,72 +1,66 @@
+const subscribeForm = document.getElementById("subscribe-form");
 
-const subscribeForm = document.querySelector('#subscribe-form');
-const emailInput = document.querySelector('#email');
+if (subscribeForm) {
+    subscribeForm.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-subscribeForm.addEventListener('submit', function (event) {
-    event.preventDefault();
+        if (!subscribeForm.checkValidity()) {
+            subscribeForm.reportValidity();
+            return;
+        }
 
-    if (!subscribeForm.checkValidity()) {
-        subscribeForm.reportValidity();
-        return;
-    }
+        const email = subscribeForm.querySelector("#email").value;
 
-    console.log({
-        email: emailInput.value
+        console.log({
+            email: email
+        });
+
+        subscribeForm.reset();
     });
-});
+}
 
 
-const registrationButton = document.querySelector('#registration-btn');
-const modal = document.querySelector('.modal');
-const closeButton = document.querySelector('.modal__close');
-const overlay = document.querySelector('.overlay');
+let user = null;
 
-const registrationForm = document.querySelector('#registration-form');
 
-const passwordInput = document.querySelector('#password');
-const repeatPasswordInput = document.querySelector('#repeat-password');
+const registrationForm = document.getElementById("registration-form");
 
-let user;
+if (registrationForm) {
+    registrationForm.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-registrationButton.addEventListener('click', function () {
-    modal.classList.add('modal-showed');
-});
+        if (!registrationForm.checkValidity()) {
+            alert("Регистрация отклонена. Проверьте правильность заполнения полей.");
+            registrationForm.reportValidity();
+            return;
+        }
 
-closeButton.addEventListener('click', function () {
-    modal.classList.remove('modal-showed');
-});
+        const password = registrationForm.querySelector("#password").value;
+        const repeatPassword = registrationForm.querySelector("#repeat-password").value;
 
-overlay.addEventListener('click', function () {
-    modal.classList.remove('modal-showed');
-});
+        if (password !== repeatPassword) {
+            alert("Регистрация отклонена. Пароли не совпадают!");
+            return;
+        }
 
-registrationForm.addEventListener('submit', function (event) {
-    event.preventDefault();
+        const formData = new FormData(registrationForm);
 
-    if (!registrationForm.checkValidity()) {
-        registrationForm.reportValidity();
+        user = Object.fromEntries(formData.entries());
 
-    }
+        delete user["repeat-password"];
 
-    if (passwordInput.value !== repeatPasswordInput.value) {
-        alert('Регистрация отклонена. Пароли не совпадают.');
-        return;
-    }
+        user.createdOn = new Date();
 
-    const formData = new FormData(registrationForm);
+        console.log("Регистрация успешна:", user);
 
-    user = {
-        firstName: formData.get('firstName'),
-        lastName: formData.get('lastName'),
-        birthDate: formData.get('birthDate'),
-        login: formData.get('login'),
-        repeatPassword: formData.get('repeatPassword'),
-        createdOn: new Date()
-    };
+        alert("Регистрация прошла успешно!");
 
-    console.log(user);
+        registrationForm.reset();
 
-    modal.classList.remove('modal-showed');
+        const modal = document.getElementById("registration-modal");
 
-    registrationForm.reset();
-});
+        if (modal) {
+            modal.classList.remove("modal-showed");
+        }
+    });
+}
