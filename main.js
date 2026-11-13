@@ -1,3 +1,10 @@
+import  Modal  from "./Modal.js";
+
+const registrationModal = new Modal(
+  "registration-modal",
+  "registration-btn",
+  true
+);
 
 import {
   Coffee,
@@ -112,3 +119,4 @@ cafe.orderDrink(lemonade);
 // Проверяем температуру после приготовления
 console.log("Температура кофе:", coffee.getTemperature());
 console.log("Температура лимонада:", lemonade.getTemperature());
+
