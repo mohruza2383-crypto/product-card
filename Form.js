@@ -24,7 +24,7 @@ export default class Form {
     }
 
     addSubmitListener() {
-        this.form.addEventListener("submit", event => {
+        this.form.addEventListener("submit", (event) => {
             event.preventDefault();
 
             if (!this.isValid()) {
@@ -35,15 +35,17 @@ export default class Form {
             const password = this.form.querySelector("#password");
             const repeatPassword = this.form.querySelector("#repeat-password");
 
-            if (password && repeatPassword &&
-                password.value !== repeatPassword.value) {
+            if (password.value !== repeatPassword.value) {
                 alert("Пароли не совпадают!");
                 return;
             }
 
-            console.log("Данные формы:", this.getValues());
+            const formData = this.getValues();
+
+            console.log("Данные формы:", formData);
 
             alert("Форма заполнена успешно!");
+
             this.reset();
         });
     }

@@ -3,28 +3,43 @@ export default class Modal {
         this.modal = document.getElementById(id);
 
         if (!this.modal) {
-            console.error("Не найдено модальное окно:", id);
+            console.error("Модальное окно не найдено");
             return;
         }
 
-        this.closeButton = this.modal.querySelector(".modal__close");
-        this.overlay = this.modal.querySelector(".overlay");
-
-        this.closeButton?.addEventListener("click", () => this.close());
-        this.overlay?.addEventListener("click", () => this.close());
-
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape") {
-                this.close();
-            }
-        });
+        this.addCloseListener();
+        this.addOverlayListener();
     }
 
     open() {
-        this.modal?.classList.add("modal-showed");
+        this.modal.classList.add("modal-showed");
     }
 
     close() {
-        this.modal?.classList.remove("modal-showed");
+        this.modal.classList.remove("modal-showed");
+    }
+
+    isOpen() {
+        return this.modal.classList.contains("modal-showed");
+    }
+
+    addCloseListener() {
+        const button = this.modal.querySelector(".modal__close");
+
+        if (button) {
+            button.addEventListener("click", () => {
+                this.close();
+            });
+        }
+    }
+
+    addOverlayListener() {
+        const overlay = this.modal.querySelector(".overlay");
+
+        if (overlay) {
+            overlay.addEventListener("click", () => {
+                this.close();
+            });
+        }
     }
 }
