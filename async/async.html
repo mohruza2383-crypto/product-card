@@ -1,0 +1,45 @@
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Async | Users</title>
+
+    <link rel="stylesheet" href="./async.style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+
+    <div class="users-list"></div>
+
+    <main class="container">
+      <h1>Список пользователей</h1>
+
+      <!-- Сообщения о загрузке, ошибках и действиях -->
+      <div class="info-messages" role="status" aria-live="polite"></div>
+
+      <!-- Здесь будут отображаться карточки пользователей -->
+      <div class="users-list"></div>
+
+      <!-- Кнопки управления пользователями -->
+      <div class="controls">
+        <button id="btn-remove-all-cards" type="button">
+          Удалить все карточки
+        </button>
+
+        <button id="btn-get-all-users" type="button">
+          Получить всех пользователей
+        </button>
+      </div>
+    </main>
+
+    <script type="module" src="async.js"></script>
+  </body>
+</html>
