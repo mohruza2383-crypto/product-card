@@ -1,0 +1,40 @@
+
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Karina",
+      "surname": "Fedorova",
+      "email": "karina.fedorova@gmail.com",
+      "age": 18
+    },
+    {
+      "id": 2,
+      "name": "Sasha",
+      "surname": "Tikhonova",
+      "email": "sasha.tikhonova@gmail.com",
+      "age": 20
+    },
+    {
+      "id": 3,
+      "name": "Petya",
+      "surname": "Smirnov",
+      "email": "petya.smirnov@gmail.com",
+      "age": 17
+    },
+    {
+      "id": 4,
+      "name": "Maksim",
+      "surname": "Morozov",
+      "email": "maksim.morozov@gmail.com",
+      "age": 25
+    },
+    {
+      "id": 5,
+      "name": "Maria",
+      "surname": "Alexandrovna",
+      "email": "maria.alexandrovna@gmail.com",
+      "age": 31
+    }
+  ]
+}
